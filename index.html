@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>MonoList</title>
+  </head>
+  <body>
+    <button class="theme-switch">
+        <img class="theme-icon" src="assets/light.svg" width="24px" />
+      </button>
+    <main>
+      <div class="main-container">
+        <h2 class="title">Your To Do</h2>
+        <div class="input-container">
+          <input
+            class="inputField"
+            type="text"
+            placeholder="Add new task"
+          />
+          <button class="addButton">
+            <img class="add-icon" src="assets/add.svg" width="24px" />
+          </button>
+        </div>
+        <div class="task-list" id="taskList"></div>
+      </div>
+    </main>
+    <script src="js/script.js"></script>
+  </body>
+</html>

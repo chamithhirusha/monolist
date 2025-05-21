@@ -1,0 +1,142 @@
+:root {
+  --bg-color: #f3f3f3;
+  --text-color: #000;
+  --task-bg-color: #fff;
+  --task-border: #ccc;
+  --placeholder-color: #aaa;
+  --highlight-color: #555;
+}
+
+body.dark {
+  --bg-color: #1c1c1c;
+  --text-color: #fff;
+  --task-bg-color: #2a2a2a;
+  --task-border: #444;
+  --placeholder-color: #888;
+  --highlight-color: #ccc;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  width: 100%;
+  padding: 100px 50px;
+  max-width: 600px;
+  position: relative;
+}
+
+.theme-switch {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+img.theme-icon,
+img.add-icon,
+img.remove-icon {
+  transition: filter 0.3s ease;
+}
+
+body.dark img.theme-icon,
+body.dark img.add-icon,
+body.dark img.remove-icon {
+  filter: invert(1);
+}
+
+.main-container {
+  background-color: var(--task-bg-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.input-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.inputField {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid var(--task-border);
+  border-radius: 5px;
+  background: transparent;
+  color: var(--text-color);
+  font-size: 1rem;
+  outline: none;
+}
+
+.addButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.task {
+  background: var(--task-bg-color);
+  border: 1px solid var(--task-border);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.task-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--highlight-color);
+}
+
+.task-text {
+  flex: 1;
+  font-size: 1rem;
+  word-break: break-word;
+}
+
+.task-text.strike {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.task-remove {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .main-container {
+    padding: 15px;
+  }
+
+  .inputField {
+    font-size: 0.9rem;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+}
