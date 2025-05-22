@@ -46,14 +46,20 @@ function renderTask(text, done = false) {
   removeBtn.addEventListener("click", () => {
     const index = [...taskList.children].indexOf(taskDiv);
     tasks.splice(index, 1);
-    taskDiv.remove();
+    taskDiv.classList.add("removing");
     saveTasks();
+    setTimeout(() => taskDiv.remove(), 300);
   });
 
   taskDiv.appendChild(checkbox);
   taskDiv.appendChild(taskText);
   taskDiv.appendChild(removeBtn);
   taskList.appendChild(taskDiv);
+
+  // Trigger animation
+  requestAnimationFrame(() => {
+    taskDiv.classList.add("show");
+  });
 }
 
 addButton.addEventListener("click", () => {
