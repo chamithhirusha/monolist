@@ -8,6 +8,7 @@
   --placeholder-color: #aaa;
   --highlight-color: #555;
   --task-text-alt-color: #326615;
+  --task-text-checked-color: #71b11e;
 }
 
 body.dark {
@@ -18,6 +19,7 @@ body.dark {
   --placeholder-color: #888;
   --highlight-color: #ccc;
   --task-text-alt-color: #8dda29;
+  --task-text-checked-color: #71b11e;
 }
 
 body {
@@ -142,14 +144,21 @@ body.dark img.remove-icon {
 
 .task-checkbox::after {
   content: "✔";
-  color: var(--text-color);
-  font-size: 14px;
+  color: white;
+  background-color: var(--task-text-checked-color);
+  width: 100%;
+  height: 100%;
+  font-size: 15px;
   position: absolute;
   top: 0;
-  left: 4px;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   opacity: 0;
   transform: scale(0.5);
   transition: opacity 0.3s ease, transform 0.3s ease;
+  border-radius: 20px;
 }
 
 .task-checkbox:checked::after {
