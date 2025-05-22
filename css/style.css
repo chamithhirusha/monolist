@@ -100,6 +100,10 @@ body.dark img.remove-icon {
   transform: scale(1.02);
 }
 
+.inputField::placeholder {
+  opacity: 0.6; 
+}
+
 .addButton {
   border: none;
   cursor: pointer;
